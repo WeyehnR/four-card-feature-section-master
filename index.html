@@ -5,49 +5,49 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Frontend Mentor | Four card feature section</title>
   <link rel="stylesheet" href="./styles.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
   <main>
     <section class="container">
-      <section class="title-container">
+      <header class="title-container">
         <h1 class="text-preset-1">Reliable, efficient delivery</h1>
         <h2 class="text-preset-1-bold">Powered by Technology</h2>
         <p class="text-preset-2 title-text">Our Artificial Intelligence powered tools use millions of project data points to ensure that your project is successful</p>
-      </section>
-      <section class="card-section">
-        <div class="card supervisor-card">
-          <div class="rectangle color1"></div>
+      </header>
+      <section class="card-section" aria-label="Feature cards">
+        <article class="card supervisor-card">
+          <div class="rectangle color1" aria-hidden="true"></div>
           <div class="card-text">
             <h3 class="text-preset-3 card-title">Supervisor</h3>
             <p class="text-preset-4 card-info">Monitors activity to identify project roadblocks</p>
           </div>
-          <picture class="icon image1"></picture>
-        </div>
-        <div class="card team-builder-card">
-          <div class="rectangle color2"></div>
+          <img src="./images/icon-supervisor.svg" alt="Supervisor icon" class="icon">
+        </article>
+        <article class="card team-builder-card">
+          <div class="rectangle color2" aria-hidden="true"></div>
           <div class="card-text">
             <h3 class="text-preset-3 card-title">Team Builder</h3>
             <p class="text-preset-4 card-info">Scans our talent network to create the optimal team for your project</p>
           </div>
-          <picture class="icon image2"></picture>
-        </div>
-        <div class="card karma-card">
-          <div class="rectangle color3"></div>
+          <img src="./images/icon-team-builder.svg" alt="Team Builder icon" class="icon">
+        </article>
+        <article class="card karma-card">
+          <div class="rectangle color3" aria-hidden="true"></div>
           <div class="card-text">
             <h3 class="text-preset-3 card-title">Karma</h3>
             <p class="text-preset-4 card-info">Regularly evaluates our talent to ensure quality</p>
           </div>
-          <picture class="icon image3"></picture>
-        </div>
-        <div class="card calculator-card">
-          <div class="rectangle color4"></div>
+          <img src="./images/icon-karma.svg" alt="Karma icon" class="icon">
+        </article>
+        <article class="card calculator-card">
+          <div class="rectangle color4" aria-hidden="true"></div>
           <div class="card-text">
             <h3 class="text-preset-3 card-title">Calculator</h3>
             <p class="text-preset-4 card-info">Uses data from past projects to provide better delivery estimates</p>
           </div>
-          <picture class="icon image4"></picture>
-        </div>
+          <img src="./images/icon-calculator.svg" alt="Calculator icon" class="icon">
+        </article>
       </section>
     </section>
     <footer>

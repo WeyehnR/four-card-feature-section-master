@@ -20,8 +20,11 @@
   --spacing-md: 1.75rem;
   --spacing-lg: 2rem;
   --spacing-xl: 4rem;
+  --spacing-xxl: 5.313rem;
+  --spacing-xxxl: 4.875rem;
   
   /* Font Sizes */
+  --font-size-xs: 0.875rem;
   --font-size-sm: 0.938rem;
   --font-size-base: 1.5rem;
   --font-size-lg: 2.25rem;
@@ -30,6 +33,16 @@
   --font-weight-light: 300;
   --font-weight-regular: 400;
   --font-weight-semibold: 600;
+  
+  /* Layout */
+  --container-width-mobile: 375px;
+  --container-width-desktop: 75rem;
+  --card-height-mobile: 13.875rem;
+  --card-width-mobile: 19.438rem;
+  --card-height-desktop: 15.625rem;
+  --card-width-desktop: 21.875rem;
+  --icon-size-mobile: 3.563rem;
+  --icon-size-desktop: 4rem;
 }
 
 /* Global Styles */
@@ -77,6 +90,24 @@ body {
   opacity: 0.5;
 }
 
+.text-preset-3 {
+  color: var(--color-text);
+  font-family: "Poppins", sans-serif;
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: 0.01rem;
+}
+
+.text-preset-4 {
+  color: var(--color-text);
+  font-family: "Poppins", sans-serif;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-regular);
+  line-height: 1.563rem;
+  letter-spacing: 0.007rem;
+  opacity: 0.5;
+}
+
 /* Mobile Layout */
 main {
   display: flex;
@@ -90,7 +121,7 @@ main {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 375px;
+  width: var(--container-width-mobile);
 }
 
 .title-container {
@@ -100,7 +131,7 @@ main {
   justify-content: center;
   height: 10.063rem;
   width: 19.438rem;
-  margin: 5.313rem 2rem 4.875rem 2rem;
+  margin: var(--spacing-xxl) var(--spacing-lg) var(--spacing-xxxl) var(--spacing-lg);
 }
 
 .card-section {
@@ -116,8 +147,10 @@ main {
   background: var(--color-white);
   border-radius: var(--border-radius);
   box-shadow: var(--shadow-card);
-  height: 13.875rem;
-  width: 19.438rem;
+  height: var(--card-height-mobile);
+  width: var(--card-width-mobile);
+  position: relative;
+  overflow: hidden;
 }
 
 .rectangle {
@@ -125,6 +158,25 @@ main {
   height: 0.222rem;
   border-top-left-radius: var(--border-radius);
   border-top-right-radius: var(--border-radius);
+}
+
+.card-text {
+  flex: 1;
+  padding: var(--spacing-md);
+}
+
+.card-title {
+  margin-bottom: var(--spacing-xs);
+}
+
+.icon {
+  position: absolute;
+  bottom: var(--spacing-md);
+  right: var(--spacing-md);
+  height: var(--icon-size-mobile);
+  width: var(--icon-size-mobile);
+  margin: 0;
+  align-self: unset;
 }
 
 .color1 {
@@ -143,27 +195,6 @@ main {
   background-color: var(--color-blue);
 }
 
-.card-title {
-  padding-top: var(--spacing-md);
-  padding-left: var(--spacing-md);
-}
-
-.card-info {
-  padding-left: var(--spacing-md);
-  padding-right: var(--spacing-md);
-  padding-bottom: var(--spacing-md);
-}
-
-.icon {
-  height: 3.563rem;
-  width: 3.563rem;
-  margin-right: var(--spacing-md);
-  padding-top: var(--spacing-md);
-  padding-right: var(--spacing-md);
-  padding-bottom: var(--spacing-md);
-  align-self: flex-end;
-}
-
 .image1 {
   background: url(./images/icon-supervisor.svg) 50%/cover no-repeat;
 }
@@ -178,6 +209,34 @@ main {
 
 .image4 {
   background: url(./images/icon-calculator.svg) 50%/cover no-repeat;
+}
+
+/* Responsive Design */
+@media (min-width: 48rem) {
+  .container {
+    width: 100%;
+    max-width: 48rem;
+  }
+
+  .card-section {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-lg);
+  }
+
+  .card {
+    width: 100%;
+  }
+}
+
+@media (min-width: 64rem) {
+  .container {
+    max-width: 64rem;
+  }
+
+  .card-section {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 @media (min-width: 75rem) {
@@ -195,14 +254,14 @@ main {
 
   .container {
     width: 100%;
-    max-width: 75rem;
-    gap: 4rem;
+    max-width: var(--container-width-desktop);
+    gap: var(--spacing-xl);
   }
 
   .title-container {
     width: 100%;
     max-width: 33.75rem;
-    margin: 2rem auto;
+    margin: var(--spacing-lg) auto;
   }
 
   .card-section {
@@ -215,34 +274,24 @@ main {
   }
 
   .card {
-    width: 21.875rem;
-    height: 15.625rem;
+    width: var(--card-width-desktop);
+    height: var(--card-height-desktop);
   }
 
   .rectangle {
     height: 0.5rem;
   }
 
-  .card-title {
-    padding-top: var(--spacing-xs);
-    padding-left: var(--spacing-xs);
-  }
-
-  .card-info {
-    padding-left: var(--spacing-xs);
-    padding-right: var(--spacing-xs);
-    max-width: 19rem;
+  .card-text {
+    padding: var(--spacing-xs);
   }
 
   .icon {
-    height: 4rem;
-    width: 4rem;
-    margin-top: var(--spacing-lg);
-    margin-right: var(--spacing-md);
-    margin-bottom: var(--spacing-md);
-    padding-top: var(--spacing-xs);
-    padding-right: var(--spacing-xs);
-    padding-bottom: var(--spacing-xs);
+    height: var(--icon-size-desktop);
+    width: var(--icon-size-desktop);
+    bottom: var(--spacing-md);
+    right: var(--spacing-md);
+    margin: 0;
   }
 
   .supervisor-card {
