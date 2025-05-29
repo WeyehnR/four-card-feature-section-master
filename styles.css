@@ -314,3 +314,7 @@ main {
     grid-row: 2 / 4;
   }
 }
+
+.attribution {
+  font-family: "Poppins", sans-serif;
+}
