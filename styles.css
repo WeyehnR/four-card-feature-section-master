@@ -85,7 +85,7 @@ body {
   font-family: "Poppins", sans-serif;
   font-size: var(--font-size-sm);
   font-weight: var(--font-weight-regular);
-  line-height: 1.563rem;
+  line-height: clamp(1.4, 1.563rem, 2);
   letter-spacing: 0.007rem;
   opacity: 0.5;
 }
@@ -103,7 +103,7 @@ body {
   font-family: "Poppins", sans-serif;
   font-size: var(--font-size-sm);
   font-weight: var(--font-weight-regular);
-  line-height: 1.563rem;
+  line-height: clamp(1.4, 1.563rem, 2);
   letter-spacing: 0.007rem;
   opacity: 0.5;
 }
@@ -131,14 +131,17 @@ main {
   justify-content: center;
   height: 10.063rem;
   width: 19.438rem;
-  margin: var(--spacing-xxl) var(--spacing-lg) var(--spacing-xxxl) var(--spacing-lg);
+  margin-block-start: var(--spacing-xxl);
+  margin-block-end: var(--spacing-xxxl);
+  margin-inline: var(--spacing-lg);
 }
 
 .card-section {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-  margin: 0 2rem 4.875rem 2rem;
+  margin-inline: var(--spacing-lg);
+  margin-block-end: var(--spacing-xxxl);
 }
 
 .card {
@@ -166,7 +169,7 @@ main {
 }
 
 .card-title {
-  margin-bottom: var(--spacing-xs);
+  margin-block-end: var(--spacing-xs);
 }
 
 .icon {
@@ -261,7 +264,8 @@ main {
   .title-container {
     width: 100%;
     max-width: 33.75rem;
-    margin: var(--spacing-lg) auto;
+    margin-block: var(--spacing-lg);
+    margin-inline: auto;
   }
 
   .card-section {
